@@ -11,11 +11,15 @@ class TurnUserAdminUseCase {
   execute({ user_id }: IRequest): User {
     const user = this.usersRepository.findById(user_id);
 
+    console.log(user_id);
+    console.log(user);
+
     if (!user) {
-      throw new Error("Mensagem do erro");
+      throw new Error("Mensagem do erros");
     }
 
     const userAdmin = this.usersRepository.turnAdmin(user);
+
     return userAdmin;
   }
 }

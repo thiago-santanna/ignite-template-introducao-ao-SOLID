@@ -29,7 +29,6 @@ describe("[POST] /users", () => {
         email: "john.doe@example.com",
       })
       .expect(400);
-    console.log(`thiago => ${response.body.error}`);
     expect(response.body.error).toBeTruthy();
   });
 });
@@ -44,6 +43,8 @@ describe("[PATCH] /users/:user_id/admin", () => {
     });
 
     const response = await request(app).patch(`/users/${user.id}/admin`);
+
+    console.log(response.body);
 
     expect(response.body).toMatchObject({
       name: user.name,
