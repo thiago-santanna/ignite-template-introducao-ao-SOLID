@@ -17,25 +17,6 @@ class User {
       this.id = uuidV4();
     }
   }
-
-  getId(): string {
-    return this.id;
-  }
-  getName(): string {
-    return this.name;
-  }
-  getAdmin(): boolean {
-    return this.admin;
-  }
-  getEmail(): string {
-    return this.email;
-  }
-  getCreatedAt(): Date {
-    return this.created_at;
-  }
-  getUpdatedAt(): Date {
-    return this.updated_at;
-  }
 }
 
 export { User };
